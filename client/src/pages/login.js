@@ -33,12 +33,12 @@ export default function Login() {
               className="bg-gray-200 px-4 py-2 w-full pr-16 rounded-xl focus:outline-none hover:bg-green-200 leading-none"
               placeholder="Email"
               type="email"
-              name="identifier"
+              name="email"
               onChange={formik.handleChange}
             />
-            {formik.errors.identifier && formik.touched.identifier && (
+            {formik.errors.email && formik.touched.email && (
               <div className="text-red-600 absolute right-0 mr-10  md:mr-24 font-semibold ">
-                {formik.errors.identifier}
+                {formik.errors.email}
               </div>
             )}
             <MdEmail className="h-5 w-5 fill-current  absolute  right-0 mx-4" />
@@ -62,7 +62,7 @@ export default function Login() {
 
           <div className="flex justify-center">
             <button
-              className=" py-1 px-4 w-2/5 bg-azul-800 rounded  font-semibold text-white focus:bg-indigo-600 hover:bg-indigo-400 "
+              className=" py-1 px-4 w-2/5 bg-azul-800 rounded-lg font-semibold text-white focus:bg-indigo-600 hover:bg-indigo-500 "
               type="submit"
             >
               {/* {loading ? (
