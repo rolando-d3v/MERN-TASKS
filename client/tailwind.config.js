@@ -26,6 +26,20 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      orange: colors.orange,
+
+      azul: {
+        100: "#f5f5f5",
+        200: "#42424242",
+        300: "#18202e",
+        400: "#bdbdbd",
+        500: "#9e9e9e",
+        600: "#757575",
+        700: "#616161",
+
+        800: "#10131a",
+        900: "#0c0a20",
+      },
     },
     spacing: {
       px: '1px',

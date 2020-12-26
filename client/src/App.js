@@ -1,12 +1,19 @@
 import "./assets/output.css";
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import "./App.css";
+import Login from "./pages/login";
+import Proyectos from "./pages/proyectos";
+import NuevaCuenta from "./pages/nueva-cuenta";
 
 function App() {
   return (
-    <div className="">
-      <h3 className='bg-gray-200 '  >hola mundo</h3>
-      <h1>hola mundo</h1>
-    </div>
+    <BrowserRouter className="">
+      <Switch>
+        <Route exact={true} path='/' component={Login}  />
+        <Route exact={true} path='/proyectos' component={Proyectos}  />
+        <Route exact={true} path='/nueva-cuenta' component={NuevaCuenta}  />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
