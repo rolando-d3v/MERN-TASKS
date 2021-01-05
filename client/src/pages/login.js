@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useFormik } from "formik";
@@ -11,7 +12,9 @@ export default function Login() {
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().required("email es obligatorio").email('no es un email valido'),
+      email: Yup.string()
+        .required("email es obligatorio")
+        .email("no es un email valido"),
       password: Yup.string()
         .required("password es obligatorio")
         .min(6, "minimo 6 caracteres"),
@@ -20,7 +23,7 @@ export default function Login() {
       console.log(formData);
 
       //los dos resetean el formulario
-      formik.handleReset()
+      formik.handleReset();
       // formik.resetForm()
     },
   });
@@ -38,14 +41,10 @@ export default function Login() {
 
   return (
     <div className="bg-azul-800 h-screen flex items-center">
-      <div className=" w-11/12 md:w-3/5  xl:w-1/3  mx-auto text-black ">
-        <form
-          className="p-4   border-2 border-gray-400 rounded-xl bg-white "
-          onSubmit={formik.handleSubmit}
-        >
+      <div className=" w-11/12 md:w-3/5  xl:w-1/3  mx-auto text-black  border-2 border-gray-400 rounded-xl bg-white p-4 ">
+        <form onSubmit={formik.handleSubmit}>
           <h2 className="my-4 text-3xl font-semibold  text-center">
-            {" "}
-            Inicia Sesion{" "}
+            Inicia Sesion
           </h2>
 
           <section className="relative flex items-center my-4 ">
@@ -76,7 +75,7 @@ export default function Login() {
 
           <div className="flex justify-center ">
             <button
-              className=" py-1 px-4 my-4 w-2/5 bg-azul-800 rounded-lg font-semibold text-white focus:bg-indigo-600 hover:bg-indigo-500 "
+              className=" py-1.5 px-4 my-4 w-1/2 bg-azul-800 rounded-lg font-semibold text-white focus:bg-indigo-600 hover:bg-indigo-500 "
               type="submit"
             >
               {/* {loading ? (
@@ -88,6 +87,12 @@ export default function Login() {
             </button>
           </div>
         </form>
+        <Link
+          to="/nueva-cuenta"
+          className="font-semibold text-gray-500 ml-5"
+        >
+          Crear Cuenta
+        </Link>
       </div>
     </div>
   );
