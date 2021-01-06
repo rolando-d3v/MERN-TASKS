@@ -14,7 +14,7 @@ export default function ListadoProyectos() {
     return (
         <ul>
             {proyectos.map(pro => (
-                <Proyecto/>
+                <Proyecto key={pro.id}  pro={pro}/>
             ))}
         </ul>
     )

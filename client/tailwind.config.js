@@ -6,27 +6,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: colors.black,
-        white: colors.white,
-        gray: colors.coolGray,
-        red: colors.red,
-        yellow: colors.amber,
-        green: colors.emerald,
-        blue: colors.blue,
-        indigo: colors.indigo,
-        purple: colors.violet,
+        rose: colors.rose,
         pink: colors.pink,
         orange: colors.orange,
-        rose: colors.rose,
-
         cyan: colors.cyan,
         fuchsia: colors.fuchsia,
+        purple: colors.purple,
         violet: colors.violet,
+        indigo: colors.indigo,
         lightBlue: colors.lightBlue,
         teal: colors.teal,
         emerald: colors.emerald,
         lime: colors.lime,
         amber: colors.amber,
+        green: colors.green,
+        red: colors.red,
+
+        warmGray: colors.warmGray,
+        trueGray: colors.trueGray,
+        coolGray: colors.coolGray,
+        blueGray: colors.blueGray,
+        gray: colors.gray,
 
         azul: {
           100: "#f5f5f5",

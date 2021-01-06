@@ -1,14 +1,21 @@
 import React from "react";
+import Header from "../components/layout/Header";
 import Sidebar from "../components/layout/Sidebar";
+import FormTarea from "../components/tareas/FormTarea";
+import ListadoTarea from "../components/tareas/ListadoTarea";
 
 export default function Proyectos() {
   return (
-    <div>
-      <Sidebar/>
+    <div className="h-screen flex">
+      <Sidebar />
 
-      <div>
+      <div className="h-screen w-full ">
+        <Header />
         <main>
-          <h3>desde proyectos</h3>
+          <FormTarea />
+          <div>
+            <ListadoTarea />
+          </div>
         </main>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import proyectoContext from '../../context/proyecto/proyectoContext'
 
 export default function NuevoProyecto() {
   const [proyecto, setProyecto] = useState({
@@ -6,6 +7,10 @@ export default function NuevoProyecto() {
   });
 
   const { nombre } = proyecto;
+
+  const {formulario} = useContext(proyectoContext)
+
+  console.log(formulario)
 
   //poniendo los datos en el state
   const onchangeProyecto = (e) => {
@@ -34,7 +39,7 @@ export default function NuevoProyecto() {
       <form className="p-2 w-9/12 mx-auto" onSubmit={onSubmitProyecto} >
         <section className="my-2">
           <input
-            className="rounded-md focus:outline-none px-2 py-1 w-full leading-tight"
+            className="focus:outline-none px-2 py-1 w-full leading-tight bg-white border-b border-blue-800"
             type="text"
             placeholder="Nombre del Proyecto"
             name='nombre'
