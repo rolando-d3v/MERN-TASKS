@@ -8,7 +8,7 @@ export default function NuevoProyecto() {
 
   const { nombre } = proyecto;
 
-  const { formulario } = useContext(proyectoContext);
+  const { formulario, mostrarFormulario } = useContext(proyectoContext);
 
   console.log(formulario);
 
@@ -30,6 +30,7 @@ export default function NuevoProyecto() {
       <button
         className="py-1.5 px-4 my-4 bg-azul-800 text-white rounded-lg hover:bg-blue-800 "
         type="button"
+        onClick={mostrarFormulario}
       >
         Nuevo Proyecto
       </button>
