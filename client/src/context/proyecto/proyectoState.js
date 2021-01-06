@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
+import {FORMULARIO_PROYECTO} from './types'
 
 const ProyectoState = (props) => {
   const initialState = {
