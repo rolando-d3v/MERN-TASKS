@@ -1,6 +1,6 @@
-import { FORMULARIO_PROYECTO } from "./types";
+import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS } from "./types";
 
-export default (state, action) => {
+const proyectoReducer = (state, action) => {
   switch (action.type) {
     case FORMULARIO_PROYECTO:
       return {
@@ -8,7 +8,15 @@ export default (state, action) => {
         formulario: true,
       };
 
+    case OBTENER_PROYECTOS:
+      return {
+        ...state,
+        proyectos: action.payload
+      };
+
     default:
       return state;
   }
 };
+
+export default proyectoReducer

@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import proyectoContext from "../../context/proyecto/proyectoContext";
 import Proyecto from "./Proyecto";
 
 export default function ListadoProyectos() {
-  const { proyectos } = useContext(proyectoContext);
+  const { proyectos, obtenerProyectos } = useContext(proyectoContext);
+
+
+
+  useEffect(() => {
+      obtenerProyectos()
+  }, [])
 
   if (proyectos.length === 0) {
     return null;
