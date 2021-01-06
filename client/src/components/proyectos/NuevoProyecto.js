@@ -26,8 +26,6 @@ export default function NuevoProyecto() {
         e.preventDefault()
       };
 
-
-
   return (
     <div>
       <button
