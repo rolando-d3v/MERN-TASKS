@@ -2,6 +2,9 @@ import React from 'react'
 import NuevoProyecto from '../proyectos/NuevoProyecto'
 import ListadoProyectos from '../proyectos/ListadoProyectos'
 
+
+
+
 export default function Sidebar() {
     return (
         <aside className='w-80 bg-gray-200 text-center py-4 h-screen'  >
