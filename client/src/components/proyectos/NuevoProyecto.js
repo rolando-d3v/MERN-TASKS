@@ -10,8 +10,6 @@ export default function NuevoProyecto() {
 
   const { formulario, mostrarFormulario } = useContext(proyectoContext);
 
-  console.log(formulario);
-
   //poniendo los datos en el state
   const onchangeProyecto = (e) => {
     setProyecto({
