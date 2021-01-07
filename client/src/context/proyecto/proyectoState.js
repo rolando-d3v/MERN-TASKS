@@ -16,15 +16,17 @@ const ProyectoState = (props) => {
     { id: 3, nombre: "Diseño de sitio web" },
   ];
 
+  // state inicial
   const initialState = {
     proyectos: [],
     formulario: false,
+    proyecto: null
   };
 
   //Dispath para ejecutar un reducer
   const [state, dispatch] = useReducer(proyectoReducer, initialState);
 
-  //serie de funciones para ejecutar el CRUD
+  //mostrar el formulario
   const mostrarFormulario = () => {
     dispatch({
       type: FORMULARIO_PROYECTO,
@@ -49,14 +51,25 @@ const ProyectoState = (props) => {
     });
   };
 
+
+  //selecciona al proyecto que da click
+  const selectProyecto = (proyectoId) => {
+    dispatch({
+      type: PROYECTO_ACTUAL,
+      payload: proyectoId,
+    });
+  };
+
   return (
     <proyectoContext.Provider
       value={{
         formulario: state.formulario,
         proyectos: state.proyectos,
+        proyecto: state.proyecto,
         mostrarFormulario,
         obtenerProyectos,
         agregarProyecto,
+        selectProyecto,
       }}
     >
       {props.children}

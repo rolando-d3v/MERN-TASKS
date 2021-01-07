@@ -26,6 +26,12 @@ const proyectoReducer = (state, action) => {
         formulario: false,
       };
 
+      case PROYECTO_ACTUAL:
+        return {
+          ...state,
+          proyectos: state.proyectos.filter(pro =>  pro ===  action.payload)
+        }
+
     default:
       return state;
   }
