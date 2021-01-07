@@ -1,12 +1,14 @@
 import { useReducer } from "react";
+import { v4 as uuidv4 } from "uuid" 
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
-import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS } from "./types";
-
-
+import {
+  FORMULARIO_PROYECTO,
+  OBTENER_PROYECTOS,
+  AGREGAR_PROYECTO,
+} from "./types";
 
 const ProyectoState = (props) => {
-
   const proyectos = [
     { id: 1, nombre: "Tienda virtual" },
     { id: 2, nombre: "Intranet" },
@@ -28,11 +30,21 @@ const ProyectoState = (props) => {
     });
   };
 
-
+  //obtener proyectos
   const obtenerProyectos = () => {
     dispatch({
       type: OBTENER_PROYECTOS,
-      payload: proyectos
+      payload: proyectos,
+    });
+  };
+
+
+  //agregar proyecto
+  const agregarProyecto = (proyecto) => {
+    proyecto.id = uuidv4()
+    dispatch({
+      type: AGREGAR_PROYECTO,
+      payload: proyecto,
     });
   };
 
@@ -43,6 +55,7 @@ const ProyectoState = (props) => {
         proyectos: state.proyectos,
         mostrarFormulario,
         obtenerProyectos,
+        agregarProyecto,
       }}
     >
       {props.children}

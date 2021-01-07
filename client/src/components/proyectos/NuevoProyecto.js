@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import proyectoContext from "../../context/proyecto/proyectoContext";
+import {viewAlertRol} from '../../tools/viewAlert'
 
 export default function NuevoProyecto() {
   const [proyecto, setProyecto] = useState({
@@ -7,7 +8,7 @@ export default function NuevoProyecto() {
   });
 
   const { nombre } = proyecto;
-  const { formulario, mostrarFormulario } = useContext(proyectoContext);
+  const { formulario, mostrarFormulario, agregarProyecto } = useContext(proyectoContext);
   
 
   //poniendo los datos en el state
@@ -21,6 +22,13 @@ export default function NuevoProyecto() {
   //creando proyecto
   const onSubmitProyecto = (e) => {
     e.preventDefault();
+    if (!nombre) {
+      viewAlertRol('falta nombre del proyecto', 'warning')
+    } else {
+      agregarProyecto(proyecto)
+      setProyecto({nombre: ''})
+    }
+
   };
 
   return (

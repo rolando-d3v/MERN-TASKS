@@ -18,7 +18,9 @@
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "sweetalert2": "^10.13.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.8"
   },
