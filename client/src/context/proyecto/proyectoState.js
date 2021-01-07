@@ -6,6 +6,7 @@ import {
   FORMULARIO_PROYECTO,
   OBTENER_PROYECTOS,
   AGREGAR_PROYECTO,
+  PROYECTO_ACTUAL,
 } from "./types";
 
 const ProyectoState = (props) => {
