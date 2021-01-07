@@ -29,7 +29,7 @@ const proyectoReducer = (state, action) => {
       case PROYECTO_ACTUAL:
         return {
           ...state,
-          proyectos: state.proyectos.filter(pro =>  pro ===  action.payload)
+          proyecto: state.proyectos.filter(pro =>  pro.id ===  action.payload)
         }
 
     default:
