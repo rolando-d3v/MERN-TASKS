@@ -21,7 +21,6 @@ export default function NuevoProyecto() {
   //creando proyecto
   const onSubmitProyecto = (e) => {
     e.preventDefault();
-    console.log();
   };
 
   return (
