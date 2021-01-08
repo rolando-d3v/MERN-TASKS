@@ -8,9 +8,10 @@ export default function Proyectos() {
   const [sidebar, setSidebar] = useState(false);
 
   const openSidebar = () => {
-    setSidebar(true);
-    console.log("oro");
+    setSidebar(!sidebar);
   };
+
+  console.log(sidebar);
 
   return (
     <div className="h-screen flex">

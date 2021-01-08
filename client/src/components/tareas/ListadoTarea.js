@@ -39,11 +39,11 @@ export default function ListadoTarea() {
   ];
 
   return (
-    <div className="p-10  ">
+    <div className="py-10 px-4 ">
       <h3 className="font-bold text-2xl text-center my-8">
         Proyecto: {proActual.nombre}{" "}
       </h3>
-      <ul className="w-9/12 mx-auto">
+      <ul className="w-full mx-auto">
         {tareasProyecto.length === 0 ? (
           <li>no hay tareas</li>
         ) : (

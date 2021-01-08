@@ -13,7 +13,7 @@ const [proActual] = proyecto
 
   return (
     <div className="p-4 bg-blueGray-800">
-      <form className="p-2 w-1/2 mx-auto" >
+      <form className="p-2 w-4/5 mx-auto" >
         <section className="my-2">
           <input
             className="focus:outline-none px-2 py-1.5 w-full leading-tight bg-white rounded-md"
