@@ -5,7 +5,7 @@ import ListadoProyectos from '../proyectos/ListadoProyectos'
 
 
 
-export default function Sidebar() {
+export default function Sidebar({Sidebar}) {
     return (
         <aside className='w-80 bg-gray-200 text-center py-4 h-screen'  >
             <h3 className='font-bold text-3xl' >MERN<span className='font-normal' >TASKS</span> </h3>

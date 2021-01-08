@@ -11,9 +11,7 @@ export default function ListadoProyectos() {
       obtenerProyectos()
   }, [])
 
-  if (proyectos.length === 0) {
-    return null;
-  }
+  if (proyectos.length === 0) return <h3>No hay proyectos</h3>
 
   return (
     <ul>

@@ -39,7 +39,7 @@ export default function ListadoTarea() {
   ];
 
   return (
-    <div className="p-10  bg-blueGray-300">
+    <div className="p-10  ">
       <h3 className="font-bold text-2xl text-center my-8">
         Proyecto: {proActual.nombre}{" "}
       </h3>
