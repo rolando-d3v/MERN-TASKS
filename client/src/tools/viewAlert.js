@@ -47,7 +47,7 @@ export const viewAlertRol = (message, icono) => {
 };
 
 
-const viewAlertDelete = (message, icono) => {
+export const viewAlertDelete = (message, icono) => {
   Swal.fire({
     title: "Esta seguro?",
     text: message,
@@ -58,7 +58,7 @@ const viewAlertDelete = (message, icono) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      Swal.fire("Deleted!", "Your file has been deleted.", "success")
     }
   });
 };

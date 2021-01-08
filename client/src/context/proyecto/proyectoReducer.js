@@ -3,6 +3,7 @@ import {
   OBTENER_PROYECTOS,
   AGREGAR_PROYECTO,
   PROYECTO_ACTUAL,
+  ELIMINAR_PROYECTO,
 } from "./types";
 
 const proyectoReducer = (state, action) => {
@@ -26,11 +27,21 @@ const proyectoReducer = (state, action) => {
         formulario: false,
       };
 
-      case PROYECTO_ACTUAL:
-        return {
-          ...state,
-          proyecto: state.proyectos.filter(pro =>  pro.id ===  action.payload)
-        }
+    case PROYECTO_ACTUAL:
+      return {
+        ...state,
+        proyecto: state.proyectos.filter(
+          (proyecto) => proyecto.id === action.payload
+        ),
+      };
+
+    case ELIMINAR_PROYECTO:
+      return {
+        ...state,
+        proyectos: state.proyectos.filter(
+          (proyecto) => proyecto.id !== action.payload
+        ),
+      };
 
     default:
       return state;

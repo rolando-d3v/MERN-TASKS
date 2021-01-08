@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import proyectoContext from "../../context/proyecto/proyectoContext";
 
 export default function FormTarea() {
+
+  const {proyecto} = useContext(proyectoContext)
+
+if (!proyecto) return null
+
+//destructurando el array proyecto
+const [proActual] = proyecto
+
+
   return (
     <div className="p-4 bg-blueGray-800">
       <form className="p-2 w-1/2 mx-auto" >
