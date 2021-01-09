@@ -8,7 +8,7 @@ import TareaState from "./context/tareas/tareaState";
 
 function App() {
   return (
-    <BrowserRouter className="">
+    <BrowserRouter>
       <ProyectoState>
         <TareaState>
           <Switch>

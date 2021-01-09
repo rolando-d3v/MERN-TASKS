@@ -5,7 +5,6 @@ import proyectoContext from "../../context/proyecto/proyectoContext";
 export default function FormTarea() {
   const { proyecto } = useContext(proyectoContext);
 
-
   const [tareax, setTareax] = useState({
     nombre: "",
   });
@@ -15,9 +14,6 @@ export default function FormTarea() {
 
   if (!proyecto) return null;
 
-
-
-  
   const obtenerValor = (e) => {
     setTareax({
       ...tareax,
