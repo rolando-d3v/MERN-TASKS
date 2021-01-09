@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import proyectoContext from "../../context/proyecto/proyectoContext";
+import TareaContext from "../../context/tareas/tareaContext";
 import Swal from "sweetalert2";
 import Tarea from "./Tarea";
 
 export default function ListadoTarea() {
   const { proyecto, eliminarProyecto } = useContext(proyectoContext);
+  const { tareasProyecto } = useContext(TareaContext);
 
   if (!proyecto)
     return (
@@ -31,12 +33,7 @@ export default function ListadoTarea() {
     });
   };
 
-  const tareasProyecto = [
-    { id: 1, nombre: "Eligir plataforma", estado: true },
-    { id: 2, nombre: "Elegir colores", estado: false },
-    { id: 3, nombre: "sitio web", estado: false },
-    { id: 4, nombre: "Diseño", estado: true },
-  ];
+  
 
   return (
     <div className="py-10 px-4 ">

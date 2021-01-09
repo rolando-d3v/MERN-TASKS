@@ -1,0 +1,2 @@
+export const TAREAS_PROYECTO = "TAREAS_PROYECTO";
+export const AGREGAR_TAREA = "AGREGAR_TAREA";
