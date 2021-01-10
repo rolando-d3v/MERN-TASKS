@@ -11,8 +11,7 @@ export default function Proyectos() {
     setSidebar(!sidebar);
   };
 
-  console.log(sidebar);
-
+ 
   return (
     <div className="h-screen lg:flex">
       <Sidebar sidebar={sidebar} />
