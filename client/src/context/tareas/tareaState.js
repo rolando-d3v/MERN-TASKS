@@ -18,7 +18,6 @@ const TareaState = (props) => {
       { id: 9, nombre: "sitio web", estado: false, proyectoId: 3 },
       { id: 10, nombre: "Eligir plataforma", estado: true, proyectoId: 1 },
       { id: 11, nombre: "Elegir colores", estado: false, proyectoId: 2 },
-      { id: 12, nombre: "sitio web", estado: false, proyectoId: 2 },
     ],
     tareasProyecto: null,
   };
