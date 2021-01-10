@@ -10,10 +10,10 @@ export default function FormTarea() {
   });
 
   const { nombre } = tareax;
-
-
   if (!proyecto) return null;
-
+  
+  
+  //obtiene el valor del input
   const obtenerValor = (e) => {
     setTareax({
       ...tareax,
@@ -22,6 +22,7 @@ export default function FormTarea() {
   };
 
 
+  // crea una tarea
   const crearTarea = (e) => {
     e.preventDefault();
   };
