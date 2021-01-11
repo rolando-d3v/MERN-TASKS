@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import proyectoContext from "../../context/proyecto/proyectoContext";
 import TareaContext from "../../context/tareas/tareaContext";
 import Swal from "sweetalert2";
@@ -32,8 +32,6 @@ export default function ListadoTarea() {
       }
     });
   };
-
-  
 
   return (
     <div className="py-10 px-4 ">

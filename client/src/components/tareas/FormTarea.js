@@ -1,16 +1,20 @@
 import React, { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import proyectoContext from "../../context/proyecto/proyectoContext";
+import TareaContext from "../../context/tareas/tareaContext";
 
 export default function FormTarea() {
   const { proyecto } = useContext(proyectoContext);
+  const { agregarTarea} = useContext(TareaContext);
 
   const [tareax, setTareax] = useState({
     nombre: "",
   });
-
   const { nombre } = tareax;
+
+
   if (!proyecto) return null;
+  const [proyectoActual] = proyecto
   
   
   //obtiene el valor del input
@@ -25,6 +29,9 @@ export default function FormTarea() {
   // crea una tarea
   const crearTarea = (e) => {
     e.preventDefault();
+    tareax.proyectoId = proyectoActual.id
+    tareax.estado = false
+    agregarTarea(tareax)
   };
 
   return (
