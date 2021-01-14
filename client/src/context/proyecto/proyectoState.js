@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { viewAlertDelete } from "../../tools/viewAlert";
+import Swal from "sweetalert2";
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
 import {
@@ -62,10 +62,23 @@ const ProyectoState = (props) => {
 
   //selecciona al proyecto que da click
   const eliminarProyecto = (proyectoId) => {
-      dispatch({
-        type: ELIMINAR_PROYECTO,
-        payload: proyectoId,
-      });
+    Swal.fire({
+      title: "Esta seguro?",
+      text: "Que desea eliminar este proyecto",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Eliminar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        dispatch({
+          type: ELIMINAR_PROYECTO,
+          payload: proyectoId,
+        });
+      }
+    });
   };
 
   return (

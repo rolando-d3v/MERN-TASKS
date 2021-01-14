@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import proyectoContext from "../../context/proyecto/proyectoContext";
 import TareaContext from "../../context/tareas/tareaContext";
-import Swal from "sweetalert2";
 import Tarea from "./Tarea";
 
 export default function ListadoTarea() {
@@ -17,20 +16,7 @@ export default function ListadoTarea() {
   const [proActual] = proyecto;
 
   const deletePro = (id) => {
-    Swal.fire({
-      title: "Esta seguro?",
-      text: "Que desea eliminar este proyecto",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Si, Eliminar!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        eliminarProyecto(id);
-      }
-    });
+    eliminarProyecto(id);
   };
 
   return (
