@@ -60,7 +60,7 @@ const ProyectoState = (props) => {
     });
   };
 
-  //selecciona al proyecto que da click
+  //selecciona un proyecto
   const eliminarProyecto = (proyectoId) => {
     Swal.fire({
       title: "Esta seguro?",
