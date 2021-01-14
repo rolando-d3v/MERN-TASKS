@@ -6,6 +6,7 @@ export default function Proyecto({ pro }) {
   const { proyectoActual } = useContext(proyectoContext);
   const { obtenerTareas } = useContext(TareaContext);
 
+  
   //funcion para obtener id de proyecto
   const seleccionarProyecto = (id) => {
     proyectoActual(id)
