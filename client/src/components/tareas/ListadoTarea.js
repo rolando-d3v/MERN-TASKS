@@ -12,9 +12,11 @@ export default function ListadoTarea() {
       <h2 className="text-center  font-semibold ">Selecciona un Proyecto</h2>
     );
 
-  //destructurando el array proyecto
+  //destructurando el array proyecto del state
   const [proActual] = proyecto;
 
+
+  //eliminar el proyecto del state
   const deletePro = (id) => {
     eliminarProyecto(id);
   };

@@ -11,16 +11,13 @@ export default function Proyectos() {
     setSidebar(!sidebar);
   };
 
- 
   return (
     <div className="h-screen lg:flex">
       <Sidebar sidebar={sidebar} />
 
       <div className="h-screen w-full lg:ml-80 ">
         <Header openSidebar={openSidebar} />
-        <main className='overflow-y-auto' 
-        // style={{ height: "calc(100vh - 60px)" }}
-        >
+        <main className="overflow-y-auto">
           <FormTarea />
           <div className="bg-blueGray-300 ">
             <ListadoTarea />
