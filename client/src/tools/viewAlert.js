@@ -64,12 +64,7 @@ export const viewAlertDelete = (message, icono) => {
 };
 
 
-
-
-
-
-
-// _______________________________________
+////  _______________________________________
 
 export const viewAlertImage = (message, icono) => {
   return Swal.fire({

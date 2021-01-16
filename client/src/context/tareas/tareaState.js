@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import TareaContext from "./tareaContext";
 import tareaReducer from "./tareaReducer";
+import { v4 as uuidv4 } from "uuid";
 import { TAREAS_PROYECTO, AGREGAR_TAREA } from "./tareaTypes";
 
 const TareaState = (props) => {
