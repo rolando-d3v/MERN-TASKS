@@ -4,6 +4,7 @@ import tareaReducer from "./tareaReducer";
 import { TAREAS_PROYECTO, AGREGAR_TAREA } from "./tareaTypes";
 
 const TareaState = (props) => {
+  
   //state inicial
   const initialState = {
     tareas: [

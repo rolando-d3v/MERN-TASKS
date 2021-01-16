@@ -16,7 +16,6 @@ export default function FormTarea() {
   if (!proyecto) return null;
   const [proyectoActual] = proyecto
   
-  
   //obtiene el valor del input
   const obtenerValor = (e) => {
     setTareax({
@@ -24,7 +23,6 @@ export default function FormTarea() {
        [e.target.name]: e.target.value
     })
   };
-
 
   // crea una tarea
   const crearTarea = (e) => {
