@@ -9,7 +9,9 @@ export default function ListadoTarea() {
 
   if (!proyecto)
     return (
-      <h2 className="text-center  font-semibold ">Selecciona un Proyecto</h2>
+      <div className='py-10' >
+        <h2 className="text-center  font-semibold ">Selecciona un Proyecto</h2>
+      </div>
     );
 
   //destructurando el array proyecto del state
@@ -22,7 +24,7 @@ export default function ListadoTarea() {
   };
 
   return (
-    <div className="py-10 px-4 ">
+    <div className="py-10 px-4 bg-blueGray-300 ">
       <h3 className="font-bold text-2xl text-center my-8">
         Proyecto: {proActual.nombre}{" "}
       </h3>

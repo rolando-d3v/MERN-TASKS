@@ -19,7 +19,7 @@ export default function Proyectos() {
         <Header openSidebar={openSidebar} />
         <main className="overflow-y-auto">
           <FormTarea />
-          <div className="bg-blueGray-300 ">
+          <div>
             <ListadoTarea />
           </div>
         </main>
