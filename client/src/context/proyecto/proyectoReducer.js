@@ -8,6 +8,7 @@ import {
 
 const proyectoReducer = (state, action) => {
   switch (action.type) {
+    
     case FORMULARIO_PROYECTO:
       return {
         ...state,
