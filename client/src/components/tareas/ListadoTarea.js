@@ -24,7 +24,7 @@ export default function ListadoTarea() {
   };
 
   return (
-    <div className="py-10 px-4 bg-blueGray-300 ">
+    <div className="py-10 px-4 bg-blueGray-300 m-4 rounded-lg ">
       <h3 className="font-bold text-2xl text-center my-8">
         Proyecto: {proActual.nombre}{" "}
       </h3>
