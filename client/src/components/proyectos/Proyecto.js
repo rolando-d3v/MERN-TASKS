@@ -9,8 +9,8 @@ export default function Proyecto({ pro }) {
   
   //funcion para obtener id de proyecto
   const seleccionarProyecto = (id) => {
-    proyectoActual(id)
-    obtenerTareas(id)
+    proyectoActual(id)  //fijar elproyecto actual
+    obtenerTareas(id) // filtrar una tarea cuando hace click
   };
 
   return (
