@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Tarea({ tarea }) {
+  
   return (
     <li className="bg-white flex items-center my-2 py-2 justify-between px-6  space-x-2 rounded">
       <p className="font-semibold w-1/2 text-sm lg:text-base "> {tarea.nombre} </p>
