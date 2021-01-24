@@ -14,7 +14,7 @@ export default function Proyecto({ pro }) {
   };
 
   return (
-    <li>
+    <li className='space-y-2' >
       <button type="button" onClick={() => seleccionarProyecto(pro.id)}>
         {pro.nombre}
       </button>

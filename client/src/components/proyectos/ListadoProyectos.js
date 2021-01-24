@@ -14,7 +14,7 @@ export default function ListadoProyectos() {
   if (proyectos.length === 0) return <h3>No hay proyectos</h3>
 
   return (
-    <ul>
+    <ul className='px-14 text-left mt-2 list-disc'>
       {proyectos.map((pro) => (
         <Proyecto key={pro.id} pro={pro} />
       ))}
