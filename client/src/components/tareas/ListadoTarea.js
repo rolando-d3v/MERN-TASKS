@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import * as FaIcons from "react-icons/fa";
 import proyectoContext from "../../context/proyecto/proyectoContext";
 import TareaContext from "../../context/tareas/tareaContext";
 import Tarea from "./Tarea";
@@ -6,9 +7,12 @@ import Swal from "sweetalert2";
 
 export default function ListadoTarea() {
   const { proyecto, eliminarProyecto } = useContext(proyectoContext);
-  const { tareasProyecto, removeTarea, obtenerTareas, cambiarEstadoTarea } = useContext(
-    TareaContext
-  );
+  const {
+    tareasProyecto,
+    removeTarea,
+    obtenerTareas,
+    cambiarEstadoTarea,
+  } = useContext(TareaContext);
 
   if (!proyecto)
     return (
@@ -46,7 +50,7 @@ export default function ListadoTarea() {
 
   return (
     <div className="py-10 px-4 bg-blueGray-300 m-4 rounded-lg ">
-      <h3 className="font-bold text-2xl text-center my-8">
+      <h3 className="font-bold text-2xl text-center my-8 font-poppins">
         Proyecto: {proActual.nombre}
       </h3>
       <ul className="w-full mx-auto">
@@ -56,16 +60,22 @@ export default function ListadoTarea() {
           </div>
         ) : (
           tareasProyecto.map((tarea) => (
-            <Tarea key={tarea.id} tarea={tarea} eliminarTarea={eliminarTarea} cambiarEstadoTarea={cambiarEstadoTarea} />
+            <Tarea
+              key={tarea.id}
+              tarea={tarea}
+              eliminarTarea={eliminarTarea}
+              cambiarEstadoTarea={cambiarEstadoTarea}
+            />
           ))
         )}
       </ul>
       <button
-        className="bg-red-100 px-4 py-1 font-semibold mt-4 rounded border-2 border-red-600 hover:bg-red-600 hover:text-white"
+        className="bg-red-100 px-4 py-1 flex items-center font-semibold mt-4 rounded border-2 border-red-600 hover:bg-red-600 hover:text-white"
         type="button"
         onClick={() => deletePro(proActual.id)}
       >
-        Eliminar Proyecto
+        <span className='mr-2' >Eliminar Proyecto</span>
+        <FaIcons.FaTrashAlt />
       </button>
     </div>
   );
