@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'system-ui'],
+      },
       colors: {
         rose: colors.rose,
         pink: colors.pink,
