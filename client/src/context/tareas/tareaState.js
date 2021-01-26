@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import TareaContext from "./tareaContext";
 import tareaReducer from "./tareaReducer";
-import { TAREAS_PROYECTO, AGREGAR_TAREA, ELIMINAR_TAREA, ESTADO_TAREA } from "./tareaTypes";
+import { TAREAS_PROYECTO, AGREGAR_TAREA, ELIMINAR_TAREA, ESTADO_TAREA, TAREA_ACTUAL } from "./tareaTypes";
 
 const TareaState = (props) => {
   //state inicial
