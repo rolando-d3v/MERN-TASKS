@@ -22,7 +22,7 @@ export default function Login() {
     onSubmit: (formData) => {
       console.log(formData);
 
-      //los dos resetean el formulario
+      //las dos formas resetean el formulario
       formik.handleReset();
       // formik.resetForm()
     },
