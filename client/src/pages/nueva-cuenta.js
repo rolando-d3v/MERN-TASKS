@@ -44,12 +44,13 @@ export default function NuevaCuenta() {
     }
   };
 
+
   return (
     <div className="bg-azul-800 h-screen flex items-center">
       <div className=" w-11/12 md:w-3/5  xl:w-1/3  mx-auto text-black p-4   border-2 border-gray-400 rounded-xl bg-white ">
         <form onSubmit={formik.handleSubmit}>
           <h2 className="my-4 text-3xl font-semibold  text-center">
-            Crear nueva cuenta
+            Crear nueva cuenta 2020
           </h2>
 
           <section className="relative flex items-center my-4 ">
