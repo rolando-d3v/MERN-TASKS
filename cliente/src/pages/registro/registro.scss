@@ -1,7 +1,7 @@
-//@import url('https//db.onlinewebfonts.com/c/6633a78ec47bc270550144ed9f284036?family=FF+Mark');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap");
 
 $light: #f9f9f9;
+$blueElect: #000c1b;
 $gray: #ededed;
 $gray-medium: #b2b2b2;
 $gray-dark: #999999;
@@ -16,7 +16,6 @@ body {
 .form_registro {
   height: 100%;
   width: 100%;
-  //   position: absolute;
   display: grid;
   grid-template-columns: minmax(400px, 400px) auto;
 
@@ -25,7 +24,7 @@ body {
   }
 
   .registro {
-    background: $light;
+    background: $blueElect;
     padding: 50px 55px;
     min-height: 500px;
     justify-content: space-between;
@@ -38,32 +37,39 @@ body {
     }
 
     .header {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       .first {
         display: flex;
+        margin: 0 auto;
         justify-content: center;
+        background-color: white;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
         align-content: center;
         align-items: center;
-        position: relative;
-      }
 
-      .__logo {
-        width: 40px;
-        position: relative;
-        top: 20px;
+        .__logo {
+          width: 40px;
+          top: 20px;
+        }
       }
 
       .sub_title {
         font-size: 25px;
         text-align: center;
-        margin-top: 65px;
+        // margin-top: 65px;
         margin-bottom: 20px;
         font-family: system-ui;
         font-weight: 600;
+        color: white;
         letter-spacing: -1px;
       }
     }
 
-    .body {
+    .body_form {
       .wrapper_inputs {
         .control-input {
           display: flex;
@@ -72,30 +78,37 @@ body {
 
           .input_registro {
             width: 100%;
-            border: solid transparent 2px;
-            padding: 16px 38px 5px 8px;
+            height: 28px;
+            border: solid transparent 1px;
+            padding: 6px 8px;
             font-family: "Montserrat", sans-serif;
-            background: $gray;
-            color: #000;
+            background: $blueElect;
+            color: #fff;
             border-radius: 3px;
             outline: none;
             font-size: 16px;
             transition: all 0.3s ease;
+            border-color: rgb(109, 106, 106);
 
             &:hover {
-              background: darken($gray, 3);
+              border-color: rgb(255, 253, 253);
             }
 
             &:focus {
-              background: $light;
-              border-color: #000;
+              border-color: #38d3ee;
+            }
+            
+            &:focus ~ .__labelx {
+              color: #38d3ee;
             }
 
-            &:focus~.__labelx,
-            &:valid~.__labelx {
-              top: 12px;
-              font-size: 8px;
+            &:focus ~ .__labelx,
+            &:valid ~ .__labelx {
+              top: 2px;
+              background: $blueElect;
+              font-size: 10px;
               left: 10px;
+              padding: 0 10px;
             }
           }
 
@@ -110,10 +123,11 @@ body {
             transform: translateY(-50%);
             left: 20px;
             transition: all 0.15s ease;
+
+            z-index: 10;
+            height: 15px;
           }
         }
-
-
 
         .container-check {
           display: block;
@@ -191,10 +205,11 @@ body {
         .__login {
           border: solid 2px darken($gray, 1.5);
           outline: none;
-          font-size: 20px;
-          padding: 10px 18px;
+          font-size: 18px;
+          padding: 7px 16px;
           border-radius: 15px;
-          color: darken($gray, 1.5);
+          font-weight: 800;
+          color: #000;
           background: $light;
           cursor: not-allowed;
           user-select: none;

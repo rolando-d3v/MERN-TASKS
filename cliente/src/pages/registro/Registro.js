@@ -21,7 +21,7 @@ export default function Registro() {
           </div>
           <p className="sub_title">Ingresar</p>
         </div>
-        <div className="body">
+        <div className="body_form">
           <div className="wrapper_inputs">
             <div className="control-input">
               <input
@@ -44,7 +44,7 @@ export default function Registro() {
                 onChange={(e) => handleChange(e)}
                 value={data.password}
                 autoComplete="off"
-                type={"password"}
+                type="password"
                 name="password"
                 id="password-for"
                 className="input_registro"
