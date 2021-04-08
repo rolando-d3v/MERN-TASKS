@@ -13,13 +13,10 @@ body {
   user-select: none;
 }
 
-
-
-
 .form_registro {
   height: 100%;
   width: 100%;
-//   position: absolute;
+  //   position: absolute;
   display: grid;
   grid-template-columns: minmax(400px, 400px) auto;
 
@@ -27,7 +24,7 @@ body {
     grid-template-columns: minmax(100%, 400px) auto;
   }
 
-  .right-side {
+  .registro {
     background: $light;
     padding: 50px 55px;
     min-height: 500px;
@@ -73,7 +70,7 @@ body {
           position: relative;
           margin-bottom: 15px;
 
-          input {
+          .input_registro {
             width: 100%;
             border: solid transparent 2px;
             padding: 16px 38px 5px 8px;
@@ -94,32 +91,30 @@ body {
               border-color: #000;
             }
 
-            &:focus ~ .see-pass {
-              opacity: 1;
-              z-index: 1;
-            }
-
-            &:focus ~ .__label,
-            &:valid ~ .__label {
+            &:focus~.__labelx,
+            &:valid~.__labelx {
               top: 12px;
               font-size: 8px;
               left: 10px;
             }
           }
 
-          .__label {
+          .__labelx {
             text-transform: uppercase;
+            position: absolute;
             font-size: 10px;
             font-family: "Montserrat", sans-serif;
             font-weight: 800;
             color: $gray-dark;
-            position: absolute;
             top: 50%;
             transform: translateY(-50%);
             left: 20px;
             transition: all 0.15s ease;
           }
         }
+
+
+
         .container-check {
           display: block;
           position: relative;
@@ -170,7 +165,7 @@ body {
             border-radius: 3px;
             transition: 0.1s all ease;
 
-            &:after {   
+            &:after {
               content: "";
               position: absolute;
               display: none;
@@ -220,14 +215,8 @@ body {
             background: darken($vine, 15);
             border-color: darken($vine, 15);
           }
-
-        
         }
       }
     }
-
-   
   }
-
-
 }

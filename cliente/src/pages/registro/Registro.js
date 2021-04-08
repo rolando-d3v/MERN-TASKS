@@ -14,7 +14,7 @@ export default function Registro() {
 
   return (
     <div className="form_registro">
-      <form className="right-side">
+      <form className="registro">
         <div className="header">
           <div className="first">
             <img src="/logo.png" className="__logo" alt="" />
@@ -32,10 +32,10 @@ export default function Registro() {
                 type="text"
                 name="username"
                 id="username-for"
-                className="__input"
+                className="input_registro"
                 required="on"
               />
-              <label htmlFor="username-for" className="__label">
+              <label htmlFor="username-for" className="__labelx">
                 nombre de usuario
               </label>
             </div>
@@ -47,10 +47,10 @@ export default function Registro() {
                 type={"password"}
                 name="password"
                 id="password-for"
-                className="__input"
+                className="input_registro"
                 required="on"
               />
-              <label htmlFor="password-for" className="__label">
+              <label htmlFor="password-for" className="__labelx">
                 contraseña
               </label>
             </div>
@@ -67,7 +67,9 @@ export default function Registro() {
           </div>
           <div className="button_registro">
             {data && data.username && data.password ? (
-              <button className="__login __checked">Crear usuario</button>
+              <button type="submit" className="__login __checked">
+                Crear usuario
+              </button>
             ) : (
               <button type="submit" className="__login">
                 Crear usuario
