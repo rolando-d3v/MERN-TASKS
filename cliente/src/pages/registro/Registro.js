@@ -77,6 +77,7 @@ export default function Registro() {
             )}
           </div>
         </div>
+          <a href="" className='App-logo'  >red </a>
       </form>
     </div>
   );
