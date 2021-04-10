@@ -8,20 +8,21 @@ $gray-dark: #999999;
 $vine: #d13639;
 
 body {
-  background: $light;
+  // background: $light;
   font-family: "Montserrat", sans-serif;
-  user-select: none;
+  // user-select: none;
 }
 
 .form_registro {
   height: 100%;
   width: 100%;
+  // width: 450px;
   display: grid;
   grid-template-columns: minmax(400px, 400px) auto;
 
-  @media screen and (max-width: 425px) {
-    grid-template-columns: minmax(100%, 400px) auto;
-  }
+  // @media screen and (max-width: 425px) {
+  //   grid-template-columns: minmax(100%, 400px) auto;
+  // }
 
   .registro {
     background: $blueElect;
