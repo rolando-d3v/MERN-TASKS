@@ -8,13 +8,22 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- 
-/* *,::after, ::before {
+
+ /*
+ //forma2
+ *,::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 } */
 
+
+/* forma 1 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 
 html {
@@ -156,6 +165,7 @@ sup {
 
 img {
   border-style: none;
+  max-width: 100%;
 }
 
 /* Forms
