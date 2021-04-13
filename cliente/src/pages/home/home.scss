@@ -1,0 +1,12 @@
+.logo {
+  
+  max-width: 400px;
+  margin: 2rem auto;
+
+  &__img {
+    width: 300px;
+    float: left;
+    shape-outside: circle(150px at 0px 150px);
+    margin-left: -150px;
+  }
+}
