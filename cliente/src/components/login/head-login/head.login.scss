@@ -1,0 +1,25 @@
+.header {
+    .first {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .__logo {
+      width: 40px;
+      position: relative;
+      top: 20px;
+    }
+
+    .sub_title {
+      font-size: 25px;
+      text-align: center;
+      margin-top: 65px;
+      margin-bottom: 20px;
+      font-family: system-ui;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+  }

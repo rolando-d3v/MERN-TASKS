@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./registro.scss";
+import "./nuevaCuenta.scss";
 
-export default function Registro() {
+export default function NuevaCuenta() {
   const [data, setData] = useState({ username: "", password: "", keep: false });
 
   const handleChange = (e) => {

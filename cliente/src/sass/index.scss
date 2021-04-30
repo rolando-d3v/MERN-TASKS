@@ -1,12 +1,26 @@
+@import './colores.scss';
+
+//@import url('https//db.onlinewebfonts.com/c/6633a78ec47bc270550144ed9f284036?family=FF+Mark');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap");
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", sans-serif;
+  background: var(--light);
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
 }
 
-// * {
-//   padding: 0;
-//   margin: 0;
-// }
+
+
+
+
+
+
+
+
+
+
+
 
 // animacion
 .App-logo {
