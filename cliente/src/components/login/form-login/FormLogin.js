@@ -1,4 +1,3 @@
-import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { useState } from "react";
 import "./form.login.scss";
 
@@ -9,19 +8,12 @@ export default function FormLogin() {
     keep: false,
   });
 
-
-  const [see, setSee] = useState(false);
-
   const handleChange = (e) => {
     setData({
       ...data,
       [e.target.name]:
         e.target.name === "keep" ? e.target.checked : e.target.value,
     });
-  };
-
-  const seePass = () => {
-    setSee(!see);
   };
 
   return (
@@ -48,7 +40,7 @@ export default function FormLogin() {
             onChange={(e) => handleChange(e)}
             value={data.password}
             autoComplete="off"
-            type={!see ? "password" : "text"}
+            type="password"
             name="password"
             id="password-for"
             className="__input"
@@ -57,11 +49,6 @@ export default function FormLogin() {
           <label htmlFor="password-for" className="__label">
             contraseña
           </label>
-          {see ? (
-            <IoIosEye onClick={seePass} className="see-pass" />
-          ) : (
-            <IoIosEyeOff onClick={seePass} className="see-pass" />
-          )}
         </div>
 
         <label className="container-check">
@@ -78,8 +65,7 @@ export default function FormLogin() {
       <div className="wrapper_button">
         {data && data.username && data.password ? (
           <button className="__login __checked">
-            Login x
-            <i className="lnr lnr-arrow-right"></i>
+            Login x<i className="lnr lnr-arrow-right"></i>
           </button>
         ) : (
           <button className="__login">
