@@ -1,25 +1,23 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "./App.css";
-import Login from "./pages/login";
-import Proyectos from "./pages/proyectos";
-import NuevaCuenta from "./pages/nueva-cuenta";
-import ProyectoState from "./context/proyecto/proyectoState";
-import TareaState from "./context/tareas/tareaState";
+import Page404 from "./pages/404/Page404";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Proyectos from "./pages/Proyectos";
+import Registro from "./pages/nuevaCuenta/NuevaCuenta";
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <ProyectoState>
-        <TareaState>
-          <Switch>
-            <Route exact={true} path="/" component={Login} />
-            <Route exact={true} path="/proyectos" component={Proyectos} />
-            <Route exact={true} path="/nueva-cuenta" component={NuevaCuenta} />
-          </Switch>
-        </TareaState>
-      </ProyectoState>
-    </BrowserRouter>
+    <div className="">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/nueva-cuenta" component={Registro} />
+          <Route exact path="/proyectos" component={Proyectos} />
+          
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route path="*" component={Page404} />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
-
-export default App;
