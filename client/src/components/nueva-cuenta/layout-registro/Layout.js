@@ -6,7 +6,7 @@ import styles from './layout.module.scss';
 
 export default function LayoutLogin() {
   return (
-    <div className={styles.layout_registro} >
+    <div className={`${styles.layout_registro}`}   >
       <div className={styles.right_side} >
         <HeadLogin />
         <FormLogin />

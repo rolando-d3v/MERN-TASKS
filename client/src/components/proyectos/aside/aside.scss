@@ -1,0 +1,15 @@
+.aside-proyectos {
+    grid-area: SIDE;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 36px;
+
+
+    &__title {
+        font-weight: 900;
+        font-size: 29px;
+    }
+}

@@ -1,19 +1,16 @@
-import styles from './footer.module.scss';
-import {Link} from 'react-router-dom';
+import styles from "./footer.module.scss";
+import { Link } from "react-router-dom";
 
 export default function FooterLogin() {
   return (
-    <div className={styles.footer} >
-      <div className={styles.ex9} >
-        <a href="#!" className={styles.__text} >
-          ¿no puedes iniciar sesión?
-        </a>
-        <Link to='/nueva-cuenta' className={styles.__text}  >
-          crear una cuenta
+    <div className={styles.footer}>
+      <div className={styles.ex9}>
+        <Link to="/" className={styles.__text}>
+          Volver a iniciar sesion
         </Link>
       </div>
       <div className={styles.ex3}>
-        <a href="#!" className={`${styles.__text} ${styles.version}`}   >
+        <a href="#!" className={`${styles.__text} ${styles.version}`}>
           V28.0.1
         </a>
       </div>

@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as Yup from "yup";
-import "./form.login.scss";
+import "./form.scss";
 
 export default function FormLogin() {
   const [eyePass, setEyePass] = useState(false);
@@ -10,9 +10,10 @@ export default function FormLogin() {
   const formik = useFormik({
     //state initial de valores
     initialValues: {
+      nombre: "",
       identifier: "",
       password: "",
-      cheked: false,
+      confirmar: "",
     },
     // validacion del state con yup
     validationSchema: Yup.object({
@@ -33,13 +34,11 @@ export default function FormLogin() {
   // MOSTRAR UN ERROR PERZONALIZADO
   const errorFormik = (err, touch) => {
     if (err && touch) {
-      return (
-        <span className="error_alert ">
-          {err}
-        </span>
-      );
+      return <span className="error_alert ">{err}</span>;
     }
   };
+
+
 
   //efecto de input label hacia arriba
   useEffect(() => {
@@ -60,8 +59,10 @@ export default function FormLogin() {
       input.addEventListener("focus", addcl);
       input.addEventListener("blur", remcl);
     });
-
   }, []);
+
+
+
 
   //mostara el eye con el password
   const clickEyePassword = () => {
@@ -69,22 +70,41 @@ export default function FormLogin() {
   };
 
   return (
-    <form onSubmit={formik.handleSubmit} className="form_login">
+    <form onSubmit={formik.handleSubmit} className="form">
       <section className="section_input">
         <span className="icon_login">
-          <FaIcons.FaRegEnvelope className="" />
+          <FaIcons.FaUserAlt />
         </span>
-        <div className="div_input">
-          <label htmlFor="email-for" className="label_form">
+        <div className="control-input">
+          <label htmlFor="input" className="label_form">
+            tu nombre
+          </label>
+          <input
+            className="input"
+            autoComplete="off"
+            type="text"
+            name="nombre"
+            id="nombre"
+            onChange={formik.handleChange}
+            value={formik.values.nombre}
+          />
+          {errorFormik(formik.errors.nombre, formik.touched.nombre)}
+        </div>
+      </section>
+      <section className="section_input">
+        <span className="icon_login">
+          <FaIcons.FaRegEnvelope />
+        </span>
+        <div className="control-input">
+          <label htmlFor="input" className="label_form">
             tu correo
           </label>
           <input
             className="input"
-            // autoFocus={true}
             autoComplete="off"
             type="email"
             name="identifier"
-            id="email-for"
+            id="email"
             onChange={formik.handleChange}
             value={formik.values.identifier}
           />
@@ -93,7 +113,7 @@ export default function FormLogin() {
       </section>
       <section className="section_input">
         <span className="icon_login">
-          <FaIcons.FaUserLock className="" />
+          <FaIcons.FaUserLock />
         </span>
         <div className="control-input">
           <label htmlFor="password" className="label_form">
@@ -122,22 +142,42 @@ export default function FormLogin() {
           {errorFormik(formik.errors.password, formik.touched.password)}
         </div>
       </section>
-      <label className="container-check">
-        <input
-          type="checkbox"
-          name="cheked"
-          checked={formik.values.cheked}
-          value={formik.values.cheked}
-          onChange={formik.handleChange}
-        />
-        <span className="label">Permanecer conectado</span>
-        <span className="checkmark"></span>
-      </label>
+      <section className="section_input">
+        <span className="icon_login">
+          <FaIcons.FaUserLock />
+        </span>
+        <div className="control-input">
+          <label htmlFor="password" className="label_form">
+            repite tu contraseña
+          </label>
+          <input
+            autoComplete="off"
+            type={eyePass ? "text" : "password"}
+            name="confirmar"
+            id="confirmar"
+            className="input"
+            required="on"
+            onChange={formik.handleChange}
+            value={formik.values.confirmar}
+          />
+          {formik.values.confirmar && (
+            <span onClick={() => clickEyePassword()}>
+              {eyePass ? (
+                <FaIcons.FaEye className="bid" />
+              ) : (
+                <FaIcons.FaEyeSlash className="bid" />
+              )}
+            </span>
+          )}
 
+          {errorFormik(formik.errors.confirmar, formik.touched.confirmar)}
+        </div>
+      </section>
+    
       <div className="wrapper_button">
         {formik.values.password && formik.values.identifier ? (
           <button type="submit" className="__login __checked">
-            Login true
+            Registrarme
           </button>
         ) : (
           <button className="__login" disabled>

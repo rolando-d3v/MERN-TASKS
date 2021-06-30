@@ -4,8 +4,8 @@ $gray-medium: #b2b2b2;
 $gray-dark: #999999;
 $vine: #d13639;
 
-.form_login {
-  height: 260px;
+.form {
+  height: 460px;
 
   .section_input {
     padding: 1px 10px;
@@ -98,76 +98,6 @@ $vine: #d13639;
     }
   }
 }
-
-//estylos para el checkbox
-.container-check {
-  display: block;
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  color: $gray-dark;
-  user-select: none;
-
-  .label {
-    transition: 0.1s all ease;
-    font-weight: 600;
-    font-size: 12px;
-  }
-
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-
-    &:checked ~ .checkmark:after {
-      display: block;
-    }
-
-    &:hover ~ .checkmark {
-      background: darken($gray, 30);
-    }
-    &:checked ~ .checkmark {
-      background-color: var(--vine);
-    }
-
-    &:checked ~ .label {
-      color: #000;
-    }
-  }
-
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    transform: scale(0.9);
-    background-color: darken($gray, 15);
-    border-radius: 3px;
-    transition: 0.1s all ease;
-
-    &:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-  }
-
-  .checkmark:after {
-    left: 5px;
-    top: 0px;
-    width: 5px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg) scale(0.7);
-  }
-}
-
 
 
 //button submit
