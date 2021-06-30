@@ -1,4 +1,5 @@
 import "./footer.login.scss";
+import {Link} from 'react-router-dom';
 
 export default function FooterLogin() {
   return (
@@ -7,9 +8,9 @@ export default function FooterLogin() {
         <a href="#!" className="__text">
           ¿no puedes iniciar sesión?
         </a>
-        <a href="#!" className="__text">
+        <Link to='/nueva-cuenta' className="__text">
           crear una cuenta
-        </a>
+        </Link>
       </div>
       <div className="ex3">
         <a href="#!" className="__text version">
