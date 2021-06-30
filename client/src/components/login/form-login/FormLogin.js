@@ -1,79 +1,150 @@
-import { useState } from "react";
+import { useFormik } from "formik";
+import { useEffect, useState } from "react";
+import * as FaIcons from "react-icons/fa";
+import * as Yup from "yup";
 import "./form.login.scss";
 
 export default function FormLogin() {
-  const [data, setData] = useState({
-    username: "",
-    password: "",
-    keep: false,
+  const [eyePass, setEyePass] = useState(false);
+
+  const formik = useFormik({
+    //state initial de valores
+    initialValues: {
+      identifier: "",
+      password: "",
+      cheked: false,
+    },
+    // validacion del state con yup
+    validationSchema: Yup.object({
+      identifier: Yup.string()
+        .required("email es obligatorio")
+        .email("email no valido"),
+      password: Yup.string()
+        .required("password es obligatorio")
+        .min(6, "minimo 6 caracteres"),
+    }),
+    //onsubmit  del formulario
+    onSubmit: (formData) => {
+      console.log(formData);
+      formik.handleReset();
+    },
   });
 
-  const handleChange = (e) => {
-    setData({
-      ...data,
-      [e.target.name]:
-        e.target.name === "keep" ? e.target.checked : e.target.value,
+  // MOSTRAR UN ERROR PERZONALIZADO
+  const errorFormik = (err, touch) => {
+    if (err && touch) {
+      return (
+        <span className="error_alert ">
+          {err}
+        </span>
+      );
+    }
+  };
+
+  //efecto de input label hacia arriba
+  useEffect(() => {
+    const inputs = document.querySelectorAll(".input");
+
+    function addcl() {
+      let parent = this.parentNode.parentNode;
+      parent.classList.add("focus");
+    }
+
+    function remcl() {
+      let parent = this.parentNode.parentNode;
+      if (this.value == "") {
+        parent.classList.remove("focus");
+      }
+    }
+    inputs.forEach((input) => {
+      input.addEventListener("focus", addcl);
+      input.addEventListener("blur", remcl);
     });
+
+  }, []);
+
+  //mostara el eye con el password
+  const clickEyePassword = () => {
+    setEyePass(!eyePass);
   };
 
   return (
-    <div className="body">
-      <div className="wrapper_inputs">
-        <div className="control-input">
-          <input
-            onChange={(e) => handleChange(e)}
-            autoFocus={true}
-            value={data.username}
-            autoComplete="off"
-            type="text"
-            name="username"
-            id="username-for"
-            className="__input"
-            required="on"
-          />
-          <label htmlFor="username-for" className="__label">
-            nombre de usuario
+    <form onSubmit={formik.handleSubmit} className="form_login">
+      <section className="section_input">
+        <span className="icon_login">
+          <FaIcons.FaRegEnvelope className="" />
+        </span>
+        <div className="div_input">
+          <label htmlFor="email-for" className="label_form">
+            tu correo
           </label>
-        </div>
-        <div className="control-input">
           <input
-            onChange={(e) => handleChange(e)}
-            value={data.password}
+            className="input"
+            // autoFocus={true}
             autoComplete="off"
-            type="password"
-            name="password"
-            id="password-for"
-            className="__input"
-            required="on"
+            type="email"
+            name="identifier"
+            id="email-for"
+            onChange={formik.handleChange}
+            value={formik.values.identifier}
           />
-          <label htmlFor="password-for" className="__label">
+          {errorFormik(formik.errors.identifier, formik.touched.identifier)}
+        </div>
+      </section>
+      <section className="section_input">
+        <span className="icon_login">
+          <FaIcons.FaUserLock className="" />
+        </span>
+        <div className="control-input">
+          <label htmlFor="password" className="label_form">
             contraseña
           </label>
-        </div>
-
-        <label className="container-check">
           <input
-            type="checkbox"
-            onChange={(e) => handleChange(e)}
-            name="keep"
+            autoComplete="off"
+            type={eyePass ? "text" : "password"}
+            name="password"
+            id="password"
+            className="input"
+            required="on"
+            onChange={formik.handleChange}
+            value={formik.values.password}
           />
-          <span className="label">Permanecer conectado</span>
-          <span className="checkmark"></span>
-        </label>
-      </div>
+          {formik.values.password && (
+            <span onClick={() => clickEyePassword()}>
+              {eyePass ? (
+                <FaIcons.FaEye className="bid" />
+              ) : (
+                <FaIcons.FaEyeSlash className="bid" />
+              )}
+            </span>
+          )}
+
+          {errorFormik(formik.errors.password, formik.touched.password)}
+        </div>
+      </section>
+      <label className="container-check">
+        <input
+          type="checkbox"
+          name="cheked"
+          checked={formik.values.cheked}
+          value={formik.values.cheked}
+          onChange={formik.handleChange}
+        />
+        <span className="label">Permanecer conectado</span>
+        <span className="checkmark"></span>
+      </label>
 
       <div className="wrapper_button">
-        {data && data.username && data.password ? (
-          <button className="__login __checked">
-            Login x<i className="lnr lnr-arrow-right"></i>
+        {formik.values.password && formik.values.identifier ? (
+          <button type="submit" className="__login __checked">
+            Login true
           </button>
         ) : (
-          <button className="__login">
-            Login null
-            <i className="lnr lnr-arrow-right"></i>
+          <button className="__login" disabled>
+            Login false
           </button>
         )}
       </div>
-    </div>
+    </form>
   );
 }
