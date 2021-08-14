@@ -181,7 +181,7 @@ export default function FormLogin() {
           </button>
         ) : (
           <button className="__login" disabled>
-            Login false
+            Registrarme
           </button>
         )}
       </div>
