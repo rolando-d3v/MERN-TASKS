@@ -1,9 +1,10 @@
-import LayoutLogin from "../components/nueva-cuenta/layout-registro/Layout";
+import LayoutNuevaCuenta from "../components/nueva-cuenta/layout-registro/Layout";
+
 
 const NuevaCuenta = () => {
   return (
     <div>
-      <LayoutLogin />
+      <LayoutNuevaCuenta />
     </div>
   );
 };
